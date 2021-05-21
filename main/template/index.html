@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>COVID-19 Healthy Diet Dataset</title>
+    </head>
+    <body>
+        <div class = "header">
+            <div class="notion">
+                <button class="notionbut" type="button" onclick="location.href = 'https://www.notion.so/A-5-4f97f8215d844b80a0e895dc4b3502ac'"> Notion </button>
+            </div>
+            <h1>A-5 EDA project</h1>
+            <div>
+                <button type="button" onclick="location.href = 'https://www.kaggle.com/mariaren/covid19-healthy-diet-dataset'"> 데이터셋 바로가기 </button>
+            </div>
+        </div>
+        <div class = "main">
+            <h2>1. 영양실조/비만 사망과 회복</h2>
+            <div class = "side-content">
+                <div class="desc">
+                    <p>영양실조와 사망/회복에 대한 관계는 음의 상관관계를 가지고 있고, 비만과 사망/회복에 대한 관계는 양의 상관관계를 가지고 있다.</p>
+                    <p>영양실조에 대해서 음의 상관관계를 가지는 것으로 보아, 영양실조가 심했을 때는 코로나로 인한 사망보다는 영양실조가 직접적인 사안으로 볼 수 있다</p>
+                </div>
+                <div class = "image">
+                    <img width="500px" src="{% static 'image/heapmap(obesity, undermouished).png' %}" alt="">
+                </div>
+            </div>
+            <div class = "content">
+                <div class="desc">
+                    <h2></h2>
+                    <h3></h3>
+                    <p>그래프를 보고
+                        비만의 비율이 20~35%의 나라가 사망률에 대한 분포를 많이 가지고 있다.
+                        비만이 10% 미만인 데이터는 영양실조의 비율이 높다고 볼 수 있다.</p>
+                </div>
+                <div class = "image">
+                    <img width="900px" src="{% static 'image/graph(obesity).png' %}" alt="">
+                </div>
+            </div>
+            <div class = "content">
+                <div class="desc">
+                    <h2>2. 단백질과 영양실조율의 관계</h2>
+                    <h3>프로틴 데이터셋에 대해서 pearson corr 시각화.</h3>
+                </div>
+                <div class = "image">
+                    <img width="900px" src="{% static 'image/2-1.png' %}" alt="">
+                </div>
+            </div>
+            <div class = "content">
+                <div class="desc">
+                    <h3>가장 상관성이 높은 2개의 feature는 'Animal Products','Vegetal Products'</h3>
+                </div>
+                <div class = "image">
+                    <img width="700px" src="{% static 'image/2-2.png' %}" alt="">
+                </div>
+                <div class="desc">
+                    <h3> positive, negative 상위 4개의 feature를 추출해서 scatterplot으로 시각화</h3>
+                </div>
+                <div class = "image">
+                    <img width="700px" src="{% static 'image/2-3.png' %}" alt="">
+                </div>
+                <div class="desc">
+                    <h3>분석 결과</h3>
+                    <p>- 식물성 식품군의 섭취비중이 높을수록, 영양실조율이 높은 경향이 있다.</p>
+                    <p>- 동물성 식품군의 섭취비중이 높을수록, 영양실조율이 낮은 경향이 있다.</p>
+                </div>
+            </div>
+            <div class = "content">
+                <div class="desc">
+                    <h2> 3 . 지방과 영양실조율의 관계</h2>
+                    <h3>전체 데이터 상관관계</h3>
+                    <div class = "image">
+                        <img width="900px" src="{% static 'image/3-1.png' %}" alt="">
+                    </div>
+                    <h3>변수 선별</h3>
+                    <p>지방의 비율이 가장 높은 5개의 음식군에 대한 분석</p>
+                    <h3>Heatmap을 통한 상관계수 확인</h3>
+                    <div class = "image">
+                        <img width="900px" src="{% static 'image/3-2.png' %}" alt="">
+                    </div>
+                    <h3>영양실조율과 음식군의 Scatterplot</h3>
+                    <p>- 양의상관관계 2개</p>
+                    <div class = "image">
+                        <img width="700px" src="{% static 'image/3-3.png' %}" alt="">
+                    </div>
+                    <p>- 음의상관관계 3개</p>
+                    <div class = "image">
+                        <img width="700px" src="{% static 'image/3-4.png' %}" alt="">
+                    </div>
+                    <h3>분석 결과</h3>
+                    <p>- 식물성 식품군의 섭취비중이 높을수록, 영양실조율이 높은 경향이 있다.</p>
+                    <p>- 동물성 식품군의 섭취비중이 높을수록, 영양실조율이 낮은 경향이 있다.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
